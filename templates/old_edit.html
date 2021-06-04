@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <h1 class="text-center">{{title}}</h1>
+
+    <div class = "col-6"></div>
+
+    <div class = "col-6">
+        <form action="sql.php" method="POST">
+            
+                <div class="multiselect-block">
+                     <label for="contact_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" inactive id="contact_name" name="contact_name" value = "{{contact_name}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="contact_fullname" class="form-label">Full name</label>
+                    <input type="text" class="form-control" id="contact_fullname" name="contact_fullname" value = "{{contact_fullname}}" >
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="contact_info" class="form-label">Info</label>
+                    <input type="text" class="form-control" id="contact_info" name="contact_info" value = "{{contact_info}}" >
+                </div>
+        
+
+                <div class="mb-3">
+                        <label for="contact_phone_number" class="form-label">Phone number</label>
+                        <input type="text" class="mask-phone form-control" id="contact_phone_number" name ="contact_phone_number" value="{{contact_phone_number}}">
+                        
+                        <script>
+                            $('.mask-phone').mask('+7 (999) 999-99-99');
+                            </script>
+                    
+                </div>    
+                  
+                
+                <div class="mb-3">
+                        <label for="contact_email" class="form-label">email</label>
+                        <input type="email" class="form-control" id="contact_email" name ="contact_email" value="{{contact_email}}">
+                 </div>    
+                    
+                 <div class="mb-3">
+                         <label for="contact_id" class="d-none form-label">Id</label>
+                        <input type="text" class="d-none form-control" id="contact_id" name="contact_id" value = "{{contact_id}}" >
+                </div>
+                    
+               <!--Телефон-->
+               <div class="form-group">
+                <!--4-->        
+                    <label for="phone-number">Номер контактного телефона</label> 
+                    <input type="text" class="mask-phone form-control" id= "phone-number" placeholder="Номер телефона">
+
+
+                    <script type="module">
+                    $('.mask-phone').mask('+7 (999) 999-99-99');
+                    </script>
+
+                <!--/4-->     
+                </div>
+            
+            <button type="submit" class="btn btn-primary" name = "{{button}}"> {{button_name}}</button>
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>

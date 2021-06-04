@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top ">
+        <h1 class="text-center">{{title}}</h1>
+        
+     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-4">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="new.php">Добавить новый контакт</a>
+              
+            </li>
+            
+          </ul>
+          
+        </div>
+     </nav>
+
+        
+
+    <div class="container">
+        
+    
+
+
+        <div class="m-4">
+            <div class="row justify-content-end">
+                <div class=" col-3  align-self-end bg-white">
+                  <a href="new.php">Добавить новый контакт</a>
+                  &nbsp;</div>
+              </div>
+          </div>
+    </div>     
+         
+         
+    
+
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-inverse">
+             <tr class="d-flex" >
+                 <th class="col-lg-2">Name</th>
+                <th class="col-lg-1"> Photo</th>  
+                    <th class="col-lg-2">Full name</th> 
+                         <th class="col-lg-2">Phone number</th> 
+                             <th class="col-lg-2">e-mail</th>  
+                                <th class="col-lg-2">INFO</th>
+                                    <th class="col-lg-1">Action</th>
+            </tr> 
+            </thead>
+        {{#each contacts}}
+        <div class="row">
+            <tr class="d-flex">
+                <td class="col-lg-2"> {{contact_name}}</td>
+                    <td class="col-lg-1"><img src="images/{{contact_photo}}"class="img-fluid"></td>
+                        <td class="col-lg-2">{{contact_fullname}}</td>
+                            <td class="col-lg-2">{{contact_phone_number}}</td>
+                                <td class="col-lg-2">{{contact_email}}</td>
+                                    <td class="col-lg-2">{{contact_info}}</td>
+                                            <td class="col-lg-1"><a href="edit.php?id={{contact_id}}">изменить</a> | <a href="sql_delete.php?id={{contact_id}}&photo={{contact_photo}}" onclick="return confirm('Удалить контакт {{contact_name}} безврозвратно ?')">удалить</a></td>
+             </tr> 
+        </div>
+        {{/each}}    
+        </table>   
+    </div>
+    </body>
+</html>   
