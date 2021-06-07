@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+    <h1 class="text-center bg-warning">{{title}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h2 class="text-center">Список контактов</h2>
+                <div >
+                    {{#each contacts}}
+                    <form action="index.php" method="POST" > 
+                        
+                        <div class="row bg-light">
+                            <div class="col">
+                            
+                                <input type="text" readonly class="form-control-plaintext" id="list_contact_name" name="list_contact_name" value = "{{contact_name}}">
+                            </div>
+                            
+                            <div class="col">
+                                
+                                <input type="text" readonly class="d-none form-control-plaintext" id="list_contact_id" name="list_contact_id" value = "{{contact_id}}">
+                            </div>
+                            <div class="col">
+            
+                                <button type="submit" class="btn btn-outline-primary mb-3">
+                                    <i class="bi bi-x-diamond-fill"></i>выбрать
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <p></p>
+                        </div>
+                    </form>
+                {{/each}}
+                </div>
+            </div>
+            <div class = "col-6">
+                <form action="edit.php" method="POST" class="border border-info">
+                    <div class="col">
+
+                    </div>
+
+                    <div class="col-md-auto">
+                        <div class="multiselect-block ">
+                        <label for="selected_contact_name" class="form-label">Name</label>
+                        <input type="text" class="form-control" readonly id="selected_contact_name" name="selected_contact_name" value="{{selected.contact_name}}">
+                        </div>
+                        <div class="mb-3">
+                        <label for="selected_contact_fullname" class="form-label">Full name</label>
+                        <input type="text" class="form-control" readonly id="selected_contact_fullname" name="selected_contact_fullname" value="{{selected.contact_fullname}}">
+                        </div>
+
+                        
+                        <div class="mb-3">
+                        <label for="selected_contact_info" class="form-label">Info</label>
+                        <input type="text" class="form-control" readonly id="selected_contact_info" name ="selected_contact_info" value="{{selected.contact_info}}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="selected_contact_phone_number" class="form-label">Phone number</label>
+                            <input type="text" class="form-control" readonly id="selected_contact_phone_number" name ="selected_contact_phone_number" value="{{selected.contact_phone_number}}">
+                            
+                            
+                        
+                        </div>
+                        <div class="mb-3">
+                                <label for="selected_contact_email" class="form-label">email</label>
+                                <input type="email" class="form-control" readonly id="selected_contact_email" name ="selected_contact_email" value="{{selected.contact_email}}">
+                                </div>
+
+                        <div class="mb-3">
+                            <label for="selected_contact_id"  class="d-none form-label">id</label>
+                            <input type="text" class="d-none form-control" readonly id="selected_contact_id" name ="selected_contact_id" value="{{selected.contact_id}}">
+                            </div>
+                        
+                    
+                    <button type="submit" class="btn btn-primary" name = "button_edit">Редактироватьконтакт </button>
+                    <button type="submit" class="btn btn-primary" name = "button_add">Добавить новый контакт</button>
+                    <button type="submit" class="btn btn-primary" onclick = "return confirm('Удалить контакт. Вы уверены')" name = "button_delete">Удалить</button>
+                            
+                  </div>   
+                </form>
+
+                
+
+            </div>
+        </div>    
+    </div>
+
+    
+</body>
+
+</html>

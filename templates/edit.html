@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header.html}}
+
+<body>
+<div class="container">
+    
+
+    <h1 class="text-center bg-warning">{{title}}</h1>
+
+    
+
+    <div class = "container-fluid ">
+        <form action="sql_update.php" method="POST" enctype ="multipart/form-data">
+            <div class="row">
+                <div class="col-4 border border-primary">
+                    <p>Photo</p>
+                    <img src="images/{{contact.0.contact_photo}}" class="img-fluid" >
+                    
+                    <div class="m-3">
+                        <label for="image_id" class="form-label">Change photo</label>
+                        <input type="file" name = "image" id="image_id">
+                    </div>
+                </div>    
+
+                <div class="col-8">
+
+                <div class="mb-3">
+                     <label for="contact_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" inactive id="contact_name" name="contact_name" value = "{{contact.0.contact_name}}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="contact_fullname" class="form-label">Full name</label>
+                    <input type="text" class="form-control" id="contact_fullname" name="contact_fullname" value = "{{contact.0.contact_fullname}}" >
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="contact_info" class="form-label">Info</label>
+                    <input type="text" class="form-control" id="contact_info" name="contact_info" value = "{{contact.0.contact_info}}" >
+                </div>
+        
+
+                <div class="mb-3">
+                        <label for="contact_phone_number" class="form-label">Phone number</label>
+                        <input type="text" class="mask-phone form-control" id="contact_phone_number" name ="contact_phone_number" value="{{contact.0.contact_phone_number}}">
+                        
+                        <script>
+                            $('.mask-phone').mask('+9(999)999-99-99');
+                            </script>
+                    
+                </div>    
+                  
+                
+                <div class="mb-3">
+                        <label for="contact_email" class="form-label">email</label>
+                        <input type="email" class="form-control" id="contact_email" name ="contact_email" value="{{contact.0.contact_email}}">
+                 </div>    
+                    
+                     
+                
+            
+                 <div class="mb-3">
+                         <label for="contact_id" class="d-none form-label">Id</label>
+                        <input type="text" class="d-none form-control" id="contact_id" name="contact_id" value = "{{contact.0.contact_id}}" >
+                </div>
+                    
+                
+            
+            <button type="submit" class="btn btn-primary" > Редактировать</button>
+            </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+</body>
+
+</html>

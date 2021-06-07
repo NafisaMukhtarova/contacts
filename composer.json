@@ -1,0 +1,7 @@
+{
+    "name": "myapp/name",
+    "description": "My awesome app name",
+    "require": {
+        "salesforce/handlebars-php": "^2.3"
+    }
+}
