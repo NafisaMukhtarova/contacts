@@ -2,6 +2,8 @@
     "name": "myapp/name",
     "description": "My awesome app name",
     "require": {
-        "salesforce/handlebars-php": "^2.3"
+        "salesforce/handlebars-php": "^2.3",
+        "vlucas/phpdotenv": "^5.3",
+        "monolog/monolog": "^2.2"
     }
 }
